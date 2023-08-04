@@ -1,0 +1,36 @@
+.timer {
+  font-size: 48px;
+  background: white;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 300px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  position: relative;
+
+  &__timeHolder {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__time {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &--min {
+      left: 15%;
+    }
+
+    &--sec {
+        left: calc(15% + 75px)
+    }
+
+    &--mil {
+        left: calc(15% + 150px);
+    }
+  }
+}

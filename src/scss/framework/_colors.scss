@@ -1,0 +1,18 @@
+// fill colors
+@each $name, $color in $fontcolors {
+  .fc--#{$name} {
+    color: $color
+  }
+}
+
+@each $name, $color in $bgcolors {
+  .bg--#{$name} {
+    background-color: $color
+  }
+}
+
+@each $name, $color in $fillcolors {
+  .fill--#{$name} {
+    fill: $color;
+  }
+}

@@ -1,0 +1,49 @@
+@each $space in $spaceAmounts {
+  @each $side in $spaceSides {
+    .m#{str-slice($side, 0, 1)}--#{$space} {
+      margin-#{$side}: calc($space / $bodyFontSize) + rem;
+    }
+
+    @if $spaceAddPaddings {
+      .p#{str-slice($side, 0, 1)}--#{$space} {
+        padding-#{$side}: calc($space / $bodyFontSize) + rem;
+      }
+    }
+  }
+}
+/*----------------------------------------*/
+
+// 1080
+@include breakpoint(xl) {
+  @each $space in $spaceAmounts {
+    @each $side in $spaceSides {
+      .m#{str-slice($side, 0, 1)}--#{$space} {
+        margin-#{$side}: calc($space / $bodyFontSize / 1.3) + rem;
+      }
+
+      @if $spaceAddPaddings {
+        .p#{str-slice($side, 0, 1)}--#{$space} {
+          padding-#{$side}: calc($space / $bodyFontSize / 1.3) + rem;
+        }
+      }
+    }
+  }
+}
+/*----------------------------------------*/
+
+// 750
+@include breakpoint(m) {
+  @each $space in $spaceAmounts {
+    @each $side in $spaceSides {
+      .m#{str-slice($side, 0, 1)}--#{$space} {
+        margin-#{$side}: calc($space / $bodyFontSize /  1.6) + rem;
+      }
+
+      @if $spaceAddPaddings {
+        .p#{str-slice($side, 0, 1)}--#{$space} {
+          padding-#{$side}: calc($space / $bodyFontSize / 1.6) + rem;
+        }
+      }
+    }
+  }
+}

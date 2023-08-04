@@ -1,0 +1,108 @@
+// breakpoints
+$breakpoints: (
+  'sssl': 1920,
+  'ssl': 1600,
+  'sl': 1500,
+  'xxxl': 1400,
+  'xxl': 1200,
+  'xl': 1080,
+  'l': 960,
+  'm': 750,
+  's': 600,
+  'xs': 500,
+  'xxs': 400,
+  't': 350
+);
+
+@mixin breakpoint($name) {
+  @media (#{$breakpointMode}-width: #{inspect(map-get($breakpoints, $name))} + px) {
+    @content;
+  }
+}
+/* ---------------------------------------- */
+
+// button reset
+@mixin buttonReset {
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+}
+/* ---------------------------------------- */
+
+// placeholders
+@mixin placeholder {
+  &::placeholder {
+    @content;
+  }
+}
+/* ---------------------------------------- */
+
+// scrimGradient
+@mixin scrimGradient($startColor: $color-black, $direction: 'to bottom') {
+  $scrimCoordinates: (
+    0: 1,
+    19: 0.738,
+    34: 0.541,
+    47: 0.382,
+    56.5: 0.278,
+    65: 0.194,
+    73: 0.126,
+    80.2: 0.075,
+    86.1: 0.042,
+    91: 0.021,
+    95.2: 0.008,
+    98.2: 0.002,
+    100: 0
+  );
+
+  $hue: hue($startColor);
+  $saturation: saturation($startColor);
+  $lightness: lightness($startColor);
+  $stops: ();
+
+  @each $colorStop, $alphaValue in $scrimCoordinates {
+    $stop: hsla($hue, $saturation, $lightness, $alphaValue) percentage($colorStop/100);
+    $stops: append($stops, $stop, comma);
+  }
+
+  background: linear-gradient(unquote($direction), $stops);
+}
+/* ---------------------------------------- */
+
+// Truncates text overflow (adds ...)
+@mixin truncate($overflow: ellipsis) {
+  overflow: hidden;
+  text-overflow: $overflow;
+  white-space: nowrap;
+}
+/* ---------------------------------------- */
+
+// css inview
+@mixin inviewFadeIn {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+
+  &.is-inview {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+}
+
+@mixin inviewFadeInUp {
+  transform: translateY(60px);
+  opacity: 0;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+
+  &.is-inview {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+  }
+}

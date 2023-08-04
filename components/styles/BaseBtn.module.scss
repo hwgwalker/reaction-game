@@ -1,0 +1,16 @@
+.baseBtn {
+  cursor: pointer;
+  background: $watermelon;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  height: 56px;
+  padding: 0 32px;
+  border-radius: 80px;
+  transition: transform 0.2s ease;
+  border: none;
+
+  &:hover {
+    transform: scale(1.015);
+  }
+}

@@ -1,0 +1,108 @@
+// primary colours
+$white: #fff;
+$greyLighter: #f5f7f7;
+$greyLight: #e5ebea;
+$grey: #3c4046;
+$greyDark: #1d252c;
+$greyDarker: #13191e;
+$black: #070707;
+$blacker: #000000;
+
+$sky: #caebf2;
+$carbon: #a9a9a9;
+$watermelon: #ff3b3f;
+$neutral: #efefef;
+$green: #19d44b;
+
+
+
+//
+$bg: $black;
+
+$fontcolors: (
+  "white": $white,
+  "grey": $grey,
+  "black": $black,
+  "greyLight": $greyLight,
+  "greyLighter": $greyLighter,
+  "carbon": $carbon
+);
+
+$bgcolors: (
+  "white": $white,
+  "black": $black,
+  "neutral": $neutral,
+  "carbon": $carbon
+);
+
+$fillcolors: (
+  "white": $white,
+  "black": $black,
+);
+/* ---------------------------------------- */
+
+// containers
+$containers: (
+  "xlarge": 1600,
+  "large": 1504,
+  "medium": 1456,
+  "small": 1296,
+  "xsmall": 896,
+);
+$containerPadding: (
+  "sssl": 48,
+  "xxxl": 40,
+  "xl": 32,
+  "s": 24,
+);
+/* ---------------------------------------- */
+
+// fonts
+$exo: "Exo", sans-serif;
+$bang: "Bangers", cursive;
+
+$fontFamilies: (
+  "exo": $exo,
+  "bang": $bang,
+);
+
+$fontSizes: (10, 12, 13, 14, 15, 16, 18, 20, 24, 28, 32, 36, 40, 48, 80);
+$fontWeights: (400, 500, 600);
+$lineHeights: (120, 130, 140, 150, 160, 180, 200);
+
+$letterSpacing: (
+  "t20": -0.02,
+  "l00": 0,
+  "l20": 0.02,
+);
+/* ---------------------------------------- */
+
+// grid
+$gapSizes: (8, 12, 14, 16, 20, 24, 32, 40, 48, 64);
+/* ---------------------------------------- */
+
+// spacing
+$spaceAddPaddings: true;
+$spaceAmounts: (20, 40, 48, 60, 80, 100, 120, 140, 160, 180, 200);
+$spaceSides: ("top", "bottom");
+/* ---------------------------------------- */
+
+// svgs
+$svgs: ("star" 16 16, "watch" 24 33);
+/* ---------------------------------------- */
+
+// transitions
+$easeCubic: cubic-bezier(0.075, 0.82, 0.165, 1);
+/* ---------------------------------------- */
+
+// body styles
+$bodyFont: $exo;
+$bodyColor: $greyDark;
+$bodyBackground: $neutral;
+$bodyLetterSpace: -0em;
+$bodyWeight: 400;
+$breakpointMode: "max";
+
+// we need both these for our functions, with and without px at the end.
+$bodyFontSize: 16;
+$bodyFontSizePx: 16px;

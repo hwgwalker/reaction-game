@@ -1,0 +1,19 @@
+@use "sass:map";
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 calc(map.get($containerPadding, "sssl") / $bodyFontSize) + rem;
+
+  @each $classname, $padding in $containerPadding {
+    @include breakpoint($classname) {
+      padding: 0 calc($padding / $bodyFontSize) + rem;
+    }
+  }
+
+  @each $classname, $width in $containers {
+    &--#{$classname} {
+      max-width: calc($width / $bodyFontSize) + rem;
+    }
+  }
+}

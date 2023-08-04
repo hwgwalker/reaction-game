@@ -1,0 +1,13 @@
+svg {
+  display: inline-block;
+}
+
+// icon sizing
+.icon {
+  @each $name, $width, $height in $svgs {
+    &--#{$name} {
+      width: calc($width / $bodyFontSize) + rem;
+      height: calc($height / $bodyFontSize) + rem;
+    }
+  }
+}

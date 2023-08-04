@@ -1,0 +1,37 @@
+.userTimes {
+padding: 16px 0;
+
+  &__label {
+    margin-right: 10px;
+    font-weight: 600;
+  }
+
+  &__timeHolder {
+    display: flex;
+    margin-bottom: 8px;
+    flex-wrap: nowrap;
+    line-height: 1.5;
+
+    &:last-of-type {
+        margin: 0;
+    }
+  }
+
+  &__time {
+    opacity: 0.6;
+    display: flex;
+    align-items: center;
+
+    &--lowest {
+        opacity: 1;
+    }
+  }
+
+  &__bestTime {
+    font-size: 12px;
+    margin-left: 5px;
+    opacity: 0.8;
+    white-space: nowrap;
+    line-height: 2;
+  }
+}

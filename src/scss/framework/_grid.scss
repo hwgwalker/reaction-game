@@ -1,0 +1,6 @@
+// gap sizes
+@each $gs in $gapSizes {
+  .gap--#{$gs} {
+    gap: calc($gs / $bodyFontSize) + rem;
+  }
+}

@@ -1,0 +1,38 @@
+// font family
+@each $ff, $font in $fontFamilies {
+  .ff--#{$ff} {
+    font-family: $font;
+  }
+}
+
+
+// font sizes
+@each $fs in $fontSizes {
+  .fs--#{$fs} {
+    font-size: calc($fs / $bodyFontSize) + rem;
+  }
+}
+
+
+// font weights
+@each $fw in $fontWeights {
+  .fw--#{$fw} {
+    font-weight: $fw;
+  }
+}
+
+
+// line heights
+@each $lh in $lineHeights {
+  .lh--#{$lh} {
+    line-height: calc($lh / 100);
+  }
+}
+
+
+// letter spacing
+@each $ls, $space in $letterSpacing {
+  .ls--#{$ls} {
+    letter-spacing: $space + em;
+  }
+}

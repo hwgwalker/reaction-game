@@ -1,0 +1,55 @@
+@use 'sass:math';
+
+// convert hex codes to rgb
+@function hexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+/*----------------------------------------*/
+
+// converts px to vw
+@function getVW($target) {
+  $vwContext: calc(1920 * 0.01) * 1px;
+  @return math.div($target, $vwContext) + vw;
+}
+/*----------------------------------------*/
+
+// converts px to rem.
+@function getREM($px) {
+  @return math.div($px, 16px) + rem;
+}
+/*----------------------------------------*/
+
+// slightly lighten
+@function lighten($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+// slightly darken
+@function darken($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+/*----------------------------------------*/
+
+// use svgs as backgrounds without needing to format it
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if ($index) {
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+@function svgURL($svg, $fill: null) {
+  $svg: if($fill, str-replace($svg, '<svg', "<svg fill='#{$fill}'"), $svg);
+  $svg: str-replace($svg, '<svg', "<svg xmlns='http://www.w3.org/2000/svg' ");
+  $svg: str-replace($svg, '<', '%3C');
+  $svg: str-replace($svg, '>', '%3E');
+  $svg: str-replace($svg, '"', "'");
+  $svg: str-replace($svg, '#', '%23');
+  $svg: str-replace($svg, '&', '%26');
+
+  @return url('data:image/svg+xml,#{$svg}');
+}
